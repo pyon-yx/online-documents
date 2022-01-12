@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% block favicon %}
+        <link rel="shortcut icon" href="{% static "assets/images/favicon.ico" %}"/>
+    {% endblock %}
+
+    {% block meta-tags %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+
+    {% block meta-title %}
+        <title>Code Confirmation</title>
+    {% endblock %}
+
+    {% block mainstyles %}
+        {% include "include_css.html" %}
+    {% endblock %}
+
+    {% block extrastyles %}
+    {% endblock %}
+
+</head>
+<body>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+
+    {% block notification %}
+        <div class="notification-zone" style="position: absolute; top: 0; right: 0;"></div>
+    {% endblock %}
+
+    {% block content %}
+        <div class="wrapper">
+            <section class="login-content">
+                <div class="container h-100">
+                    <div class="row justify-content-center align-items-center height-self-center">
+                        <div class="col-md-5 col-sm-12 col-12 align-self-center">
+                            <div class="sign-user_card">
+                                <img src="{% static "assets/images/logo.png" %}" class="img-fluid rounded-normal light-logo logo" alt="logo">
+                                <img src="{% static "assets/images/logo-white.png" %}" class="img-fluid rounded-normal darkmode-logo logo" alt="logo">
+                                <p>Enter your code to access the document.</p>
+{#                                <form>#}
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="floating-label form-group">
+                                                <input type="text" id="client_code" name="client_code" class="floating-input form-control" placeholder="">
+                                                <label for="client_code">CODE</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-check-code">Check</button>
+{#                                </form>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    {% endblock %}
+
+    {% block mainjavascript %}
+        {% include "include_js.html" %}
+    {% endblock %}
+
+    {% block extrajavascript %}
+        <script>
+            $(document).ready(function() {
+                $('#client_code').focus();
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

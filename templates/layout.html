@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% block favicon %}
+        <link rel="shortcut icon" href="{% static "assets/images/favicon.ico" %}"/>
+    {% endblock %}
+
+    {% block meta-tags %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+
+    {% block meta-title %}
+        <title>Online Documents</title>
+    {% endblock %}
+
+    {% block mainstyles %}
+        {% include "include_css.html" %}
+    {% endblock %}
+
+    {% block extrastyles %}
+    {% endblock %}
+
+</head>
+<body>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        {% block topnavbar %}{% endblock %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock %}
+
+    {% block mainjavascript %}
+        {% include "include_js.html" %}
+    {% endblock %}
+
+    {% block extrajavascript %}{% endblock %}
+</body>
+</html>
