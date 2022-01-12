@@ -37,6 +37,7 @@ urlpatterns = [
     re_path(r'^dashboard/', DashboardView.as_view(), name='dashboard'),
     re_path(r'^check_client_code/', check_client_code, name='check_client_code'),
     re_path(r'^sign_out/', SignOutView.as_view(), name='sign_out'),
-    re_path(r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], protected_serve, {'document_root': settings.MEDIA_ROOT})
+    re_path(r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], protected_serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/cbma/clienti/online-documents/public/static'}),
 ]
 
